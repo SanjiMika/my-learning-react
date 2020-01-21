@@ -19,7 +19,7 @@ class AllNotes extends Component {
 
         return (
             <React.Fragment>
-                <h3>All Notes</h3>
+                <p>All Notes</p>
 
                 <ul>
                     {notesItems}

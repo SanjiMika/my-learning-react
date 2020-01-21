@@ -2,14 +2,40 @@ import React from 'react';
 import './App.css';
 import Notes from './Notes/Notes';
 
-function App() {
-    return (
-        <div className="App">
-            <h2>My Learning React</h2>
-            <hr/>
-            <Notes/>
-        </div>
-    );
+import {ThemeContext, themes} from './context/theme-context';
+import ThemedTogglerButton from './context/ThemedTogglerButton';
+
+class App extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            theme: themes.light,
+            toggleTheme: this.toggleTheme,
+        };
+    }
+
+    toggleTheme = () => {
+        const newTheme = this.state.theme === themes.dark ? themes.light : themes.dark;
+        this.setState({theme: newTheme});
+    };
+
+    render() {
+        const {...valueContext} = this.state;
+
+        return (
+            <div className="App">
+                <h2>My Learning React</h2>
+                <hr/>
+
+                <Notes/>
+                <hr/>
+
+                <ThemeContext.Provider value={valueContext}>
+                    <ThemedTogglerButton/>
+                </ThemeContext.Provider>
+            </div>
+        );
+    }
 }
 
 export default App;
