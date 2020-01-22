@@ -5,6 +5,8 @@ import Notes from './Notes/Notes';
 import {ThemeContext, themes} from './context/theme-context';
 import ThemedTogglerButton from './context/ThemedTogglerButton';
 
+import FragmentFancyButton from './refs/FancyButton';
+
 class App extends React.Component {
     constructor(props) {
         super(props);
@@ -33,6 +35,10 @@ class App extends React.Component {
                 <ThemeContext.Provider value={valueContext}>
                     <ThemedTogglerButton/>
                 </ThemeContext.Provider>
+
+                <hr/>
+                <br/>
+                <FragmentFancyButton/>
             </div>
         );
     }
