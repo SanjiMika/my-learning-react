@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Notes from './Notes/Notes';
+import Notes from './notes/Notes';
 
 import {ThemeContext, themes} from './context/theme-context';
 import ThemedTogglerButton from './context/ThemedTogglerButton';
