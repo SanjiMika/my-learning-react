@@ -1,5 +1,5 @@
 import React from "react";
-import logProps from "./logProps";
+import withLogProps from "./withLogProps";
 
 const FancyButton = React.forwardRef((props, ref) => (
     <button ref={ref} className="FancyButton">
@@ -8,7 +8,7 @@ const FancyButton = React.forwardRef((props, ref) => (
 ));
 FancyButton.displayName = 'FancyButton';
 
-const HOCFancyButton = logProps(FancyButton);
+const WithLogPropsFancyButton = withLogProps(FancyButton);
 
 class FragmentFancyButton extends React.Component {
     constructor(props) {
@@ -27,7 +27,7 @@ class FragmentFancyButton extends React.Component {
             // Vous pouvez maintenant obtenir une ref directement attachée au bouton DOM :
             <React.Fragment>
                 <FancyButton ref={this.refFancyButton}>Fancy Button</FancyButton>&nbsp;
-                <HOCFancyButton a={1} ref={this.refHOCFancyButton}>HOC Fancy Button</HOCFancyButton>
+                <WithLogPropsFancyButton testProp={1} ref={this.refHOCFancyButton}>HOC Fancy Button</WithLogPropsFancyButton>
             </React.Fragment>
         )
     };

@@ -1,7 +1,9 @@
 import React from "react";
 
-function logProps(Component) {
+function withLogProps(Component) {
     class LogProps extends React.Component {
+        static displayName = 'LogProps';
+
         componentDidUpdate(prevProps) {
             console.log('Anciennes props :', prevProps);
             console.log('Nouvelles props :', this.props);
@@ -18,12 +20,13 @@ function logProps(Component) {
     // Remarquez le deuxième paramètre `ref` fourni par `React.forwardRef`.  Nous
     // pouvons le passer à LogProps comme une prop normale, par exemple
     // `forwardedRef`. Et il peut ensuite être attaché au composant.
-    const LogPropsForwardRef = React.forwardRef((props, ref) => {
+    const ele = React.forwardRef((props, ref) => {
         return <LogProps {...props} forwardedRef={ref} />;
     });
-    LogPropsForwardRef.displayName = "LogPropsForwardRef";
+    const name = Component.displayName || Component.name || 'Component';
+    ele.displayName = `WithLogProps_${name}`;
 
-    return LogPropsForwardRef;
+    return ele;
 }
 
-export default logProps;
+export default withLogProps;
