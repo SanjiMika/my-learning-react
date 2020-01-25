@@ -6,6 +6,7 @@ import {ThemeContext, themes} from './context/theme-context';
 import ThemedTogglerButton from './context/ThemedTogglerButton';
 
 import FragmentFancyButton from './refs/FancyButton';
+import CurrencyConvert from "./currency/CurrencyConvert";
 
 class App extends React.Component {
     constructor(props) {
@@ -39,6 +40,9 @@ class App extends React.Component {
                 <hr/>
                 <br/>
                 <FragmentFancyButton/>
+
+                <hr/>
+                <CurrencyConvert/>
             </div>
         );
     }
