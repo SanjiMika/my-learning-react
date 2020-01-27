@@ -2,6 +2,7 @@ import axios from 'axios';
 
 const getExchangeRate = async (fromCurrency, toCurrency, amount) => {
     const {data} = await axios.get(`http://api.currencylayer.com/convert?access_key=3a591ac60bff6a028610c73b90b2937c&from=${fromCurrency}&to=${toCurrency}&amount=${amount}&format=1`);
+    console.log("data fetching from api.currencylayer.com/convert", data);
 
     // after 3s for resolving result
     return new Promise(resolve => {

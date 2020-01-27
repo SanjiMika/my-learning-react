@@ -8,6 +8,8 @@ import ThemedTogglerButton from './context/ThemedTogglerButton';
 import FragmentFancyButton from './refs/FancyButton';
 import CurrencyConvert from "./currency/CurrencyConvert";
 
+import testMemoize from "./memoize/memoize";
+
 class App extends React.Component {
     constructor(props) {
         super(props);
@@ -21,6 +23,10 @@ class App extends React.Component {
         const newTheme = this.state.theme === themes.dark ? themes.light : themes.dark;
         this.setState({theme: newTheme});
     };
+
+    componentDidMount() {
+        testMemoize();
+    }
 
     render() {
         const {...valueContext} = this.state;
