@@ -9,7 +9,8 @@ import FragmentFancyButton from './refs/FancyButton';
 import CurrencyConvert from "./currency/CurrencyConvert";
 
 import testMemoize from "./memoize/memoize";
-import testThisContext from "./this-context/testThisContext";
+// import testThisContext from "./this-context/testThisContext";
+import testFunctionalProgramming from "./functionnal-programming/test";
 
 class App extends React.Component {
     constructor(props) {
@@ -28,7 +29,9 @@ class App extends React.Component {
     componentDidMount() {
         testMemoize();
 
-        testThisContext();
+        // testThisContext();
+
+        testFunctionalProgramming();
     }
 
     render() {
