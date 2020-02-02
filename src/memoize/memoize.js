@@ -8,11 +8,11 @@ const memoizedAdd = () => {
     let cache = {};
     return (n) => {
         if (n in cache) {
-            console.warn('Fetching from cache');
+            console.log('Fetching from cache');
             return cache[n];
         }
         else {
-            console.warn('Calculating result');
+            // console.log('Calculating new result');
             let result = n + 10;
             cache[n] = result;
             return result;
@@ -49,13 +49,15 @@ const factorial = memoize(
 );
 
 export default function testMemoize() {
+    console.warn('--------------------- testMemoize ------------------');
     // returned function from memoizedAdd
     const newAdd = memoizedAdd(); // execute fnc to return contexte closures
-    console.log(newAdd(9));	// calculated
-    console.log(newAdd(9));	// cached
+    newAdd(9);	// calculated
+    // console.log(newAdd(9));	// cached
 
-    // console.log('Result factorial 2', factorial(2)); // calculated
-    // console.log('Result factorial 3', factorial(3)); // calculated for 3 and cached for 2
+    console.log('Result factorial 2', factorial(2)); // calculated
+    console.log('Result factorial 3', factorial(3)); // calculated for 3 and cached for 2
     // console.log('Result factorial 4', factorial(4)); // calculated for 4 and cached for 3
 
+    console.warn('--------------------- FIN testMemoize ------------------');
 }

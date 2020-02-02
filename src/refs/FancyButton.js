@@ -18,8 +18,10 @@ class FragmentFancyButton extends React.Component {
     }
 
     componentDidMount() {
+        console.warn('--------------------- test Ref FancyButton ------------------');
         console.log('refFancyButton DOM', this.refFancyButton.current);
         console.log('refHOCFancyButton DOM', this.refHOCFancyButton.current);
+        console.warn('--------------------- FIN test Ref FancyButton ------------------');
     }
 
     render() {
