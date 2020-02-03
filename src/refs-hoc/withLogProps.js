@@ -1,4 +1,5 @@
 import React from "react";
+import {getNameComponent} from '../utils';
 
 function withLogProps(Component) {
     class LogProps extends React.Component {
@@ -23,7 +24,7 @@ function withLogProps(Component) {
     const ele = React.forwardRef((props, ref) => {
         return <LogProps {...props} forwardedRef={ref} />;
     });
-    const name = Component.displayName || Component.name || 'Component';
+    const name = getNameComponent(Component);
     ele.displayName = `WithLogProps_${name}`;
 
     return ele;
