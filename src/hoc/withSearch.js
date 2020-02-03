@@ -3,7 +3,7 @@ import {getNameComponent} from '../utils';
 
 // HOC function (logic component)
 const withSearch = (WrappedComponent) => {
-    class Search extends React.Component {
+    class WithSearch extends React.Component {
         state = {
             searchTerm: ''
         };
@@ -25,8 +25,8 @@ const withSearch = (WrappedComponent) => {
     }
 
     const name = getNameComponent(WrappedComponent);
-    Search.displayName = 'WithSearch_'+name;
-    return Search;
+    WithSearch.displayName = 'WithSearch_'+name;
+    return WithSearch;
 };
 
 export default withSearch;

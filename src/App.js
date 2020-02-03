@@ -5,12 +5,15 @@ import Notes from './notes/Notes';
 import {ThemeContext, themes} from './context/theme-context';
 import ThemedTogglerButton from './context/ThemedTogglerButton';
 
-import FragmentFancyButton from './refs/FancyButton';
+import FragmentFancyButton from './refs-hoc/FancyButton';
 import CurrencyConvert from "./currency/CurrencyConvert";
 
 import testMemoize from "./memoize/memoize";
+
 // import testThisContext from "./this-context/testThisContext";
 import testFunctionalProgramming from "./functionnal-programming/test";
+
+import Location from "./hoc/Location";
 
 class App extends React.Component {
     constructor(props) {
@@ -55,6 +58,9 @@ class App extends React.Component {
 
                 <hr/>
                 <CurrencyConvert/>
+
+                <hr/>
+                <Location/>
             </div>
         );
     }
