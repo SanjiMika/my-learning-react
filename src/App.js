@@ -6,7 +6,7 @@ import {ThemeContext, themes} from './context/theme-context';
 import ThemedTogglerButton from './context/ThemedTogglerButton';
 
 import FragmentFancyButton from './refs-hoc/FancyButton';
-import CurrencyConvert from "./async-awit/CurrencyConvert";
+import CurrencyConvert from "./async-await/CurrencyConvert";
 
 import testMemoize from "./memoize/memoize";
 
