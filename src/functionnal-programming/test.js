@@ -51,5 +51,22 @@ export default function testFunctionalProgramming() {
     let stringMaker = (pet) => `${pet.name} is ${pet.age} years old and is ${pet.color} in color.`;
     console.table(pets.filter(ageFilter).filter(colorFilter).map(stringMaker));
 
+    // Higher Order Function = retourner une fonction supérieure en ajoutant les logiques extensibles dans la fonction originale
+    const strArray = ['JavaScript', 'Python', 'PHP', 'Java', 'C'];
+    function mapForEach(arr, fn) {
+        const newArray = [];
+        for(let i = 0; i < arr.length; i++) {
+            newArray.push(
+                fn(arr[i])
+            );
+        }
+        return newArray;
+    }
+    const lenArray = mapForEach(strArray, (item) => {
+        return item.length;
+    });
+    console.log('Higher Order Function (ex: map, filter, reduce) - Custom HOF map function');
+    console.table(lenArray); // prints [ 10, 6, 3, 4, 1 ]
+
     console.warn('--------------------- FIN testFunctionalProgramming ---------------');
 }
