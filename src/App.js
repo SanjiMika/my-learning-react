@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
-import Notes from './notes/Notes';
+import Notes from './notes-redux/Notes';
 
 import {ThemeContext, themes} from './context/theme-context';
 import ThemedTogglerButton from './context/ThemedTogglerButton';
 
 import FragmentFancyButton from './refs-hoc/FancyButton';
-import CurrencyConvert from "./currency/CurrencyConvert";
+import CurrencyConvert from "./async-awit/CurrencyConvert";
 
 import testMemoize from "./memoize/memoize";
 
