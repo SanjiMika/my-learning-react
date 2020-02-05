@@ -1,7 +1,7 @@
 import React from "react";
 import {getNameComponent} from '../utils';
 
-// HOC function (logic component)
+// HOC function (stateful logic component)
 const withSearch = (WrappedComponent) => {
     class WithSearch extends React.Component {
         state = {
