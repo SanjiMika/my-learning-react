@@ -15,6 +15,8 @@ import testFunctionalProgramming from "./functionnal-programming/test";
 
 import Location from "./hoc/Location";
 
+import Example from "./hook/Example";
+
 class App extends React.Component {
     constructor(props) {
         super(props);
@@ -61,6 +63,9 @@ class App extends React.Component {
 
                 <hr/>
                 <Location/>
+
+                <hr/>
+                <Example/>
             </div>
         );
     }
