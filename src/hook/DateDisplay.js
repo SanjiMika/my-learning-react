@@ -6,20 +6,37 @@ import React, {useEffect, useState} from 'react';
     - 3e render -> clean effect -> new effect
 */
 function DateDisplay() {
+    const [play, setPlay] = useState(true);
     const [date, setDate] = useState(new Date());
 
     useEffect(() => {
-        console.log('new effect');
-        const intervalId = setInterval(() => setDate(new Date()), 3000);
+        console.log('run effect only when play is changed');
+        if (play) {
+            const interval = setInterval(() => setDate(new Date()), 1000);
 
-        return function() {
-            console.log('cleanup last effect');
-            clearInterval(intervalId);
-        };
-    });
+            return function() {
+                console.log('cleanup effect');
+                clearInterval(interval);
+            }
+        }
+    }, [play]);
 
-    console.warn('render DateDisplay');
-    return <p>Nous sommes le {date.toLocaleString("fr-FR")}</p>;
+    function handleClick() {
+        setPlay(!play);
+        setDate(new Date());
+    }
+
+    console.warn('render');
+    return (
+        <div>
+            <button onClick={handleClick}>
+                {play ? 'Pause' : 'Play'}
+            </button>
+            <p>
+                Nous sommes le {date.toLocaleString("fr-FR")}
+            </p>
+        </div>
+    );
 }
 
 export default DateDisplay;
