@@ -28,6 +28,9 @@ function MultipleSetState() {
 }
 
 /*
+Solution : On préférer d'utiliser un object de valeurs state => Optimize setState calling
+ */
+/*
 function SolutionMultipleSetState() {
     const [obj, setObj] = useState({var1: 0, var2: 0, var3: 0});
 
