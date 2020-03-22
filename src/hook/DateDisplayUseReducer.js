@@ -34,7 +34,7 @@ const PlayPauseButton = React.memo(function () {
     );
 });
 
-function DateDisplayReducer() {
+function DateDisplayUseReducer() {
     const [counter, setCounter] = useState(0);
     const [state, dispatch] = useReducer(reducer, initialState);
 
@@ -68,4 +68,4 @@ function DateDisplayReducer() {
     );
 }
 
-export default DateDisplayReducer;
+export default DateDisplayUseReducer;

@@ -12,7 +12,7 @@ function DateDisplayUseRef() {
         const intervalId = setInterval(() => setDate(new Date()), 1000);
         intervalIdRef.current = intervalId;
 
-        return function() {
+        return function () {
             clearInterval(intervalId);
         }
     }, []);

@@ -17,7 +17,7 @@ import Location from "./hoc/Location";
 
 import Example from "./hook/Example";
 // import DateDisplay from "./hook/DateDisplay";
-import DateDisplayReducer from "./hook/DateDisplayReducer";
+import DateDisplayUseReducer from "./hook/DateDisplayUseReducer";
 
 class App extends React.Component {
     constructor(props) {
@@ -70,7 +70,7 @@ class App extends React.Component {
                 <Example/>
                 <hr/>
                 {/*<DateDisplay/>*/}
-                <DateDisplayReducer/>
+                <DateDisplayUseReducer/>
             </div>
         );
     }
