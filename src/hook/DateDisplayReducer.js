@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useContext, useReducer} from 'react';
+import React, {useEffect, useState, useContext, useReducer, useMemo} from 'react';
 const AppContext = React.createContext({});
 
 const initialState = {
@@ -51,8 +51,14 @@ function DateDisplayReducer() {
         }
     }, [state.play]);
 
+    // Grâce à useMemo, l’objet correspondant à la valeur du contexte restera le même tant que le state n’aura pas été modifié.
+    const contextValue = useMemo(
+        () => ({state, dispatch}),
+        [state, dispatch]
+    );
+
     return (
-        <AppContext.Provider value={{state, dispatch}}>
+        <AppContext.Provider value={contextValue}>
             <button onClick={() => setCounter(counter + 1)}>
                 {`Incrémenter compteur (${counter})`}
             </button>
