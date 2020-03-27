@@ -15,6 +15,9 @@ import testFunctionalProgramming from "./functionnal-programming/test";
 
 import Location from "./hoc/Location";
 
+import Example from "./hook/Example";
+import DateDisplayCustomHook from "./hook/DateDisplayCustomHook";
+
 class App extends React.Component {
     constructor(props) {
         super(props);
@@ -61,6 +64,11 @@ class App extends React.Component {
 
                 <hr/>
                 <Location/>
+
+                <hr/>
+                <Example/>
+                <hr/>
+                <DateDisplayCustomHook/>
             </div>
         );
     }
