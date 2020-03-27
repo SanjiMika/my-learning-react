@@ -23,7 +23,7 @@ function MultipleSetState() {
             });
     }, []);
 
-    console.log("render MultipleSetState");
+    console.log("render MultipleSetState"); // render 3 differents times because setVar called in then() of Promise
     return <div>{`${var1} + ${var2} = ${var3}`}</div>;
 }
 
