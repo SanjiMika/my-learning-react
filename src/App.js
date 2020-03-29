@@ -17,6 +17,7 @@ import Location from "./hoc/Location";
 
 import Example from "./hook/Example";
 import DateDisplayCustomHook from "./hook/DateDisplayCustomHook";
+import Repositories from "./hook-data-fetching/Repositories";
 
 class App extends React.Component {
     constructor(props) {
@@ -68,7 +69,10 @@ class App extends React.Component {
                 <hr/>
                 <Example/>
                 <hr/>
-                <DateDisplayCustomHook/>
+                {/*<DateDisplayCustomHook/>*/}
+
+                <hr/>
+                <Repositories/>
             </div>
         );
     }
